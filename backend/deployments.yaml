@@ -17,3 +17,25 @@ spec:
         name: aplay-client
         ports:
         - containerPort: 80
+
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aplay-backend
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      run: aplay-backend
+  template:
+    metadata:
+      labels:
+        run: aplay-backend
+    spec:
+      containers:
+      - image: docker.io/minshigee/aplay-backend
+        name: aplay-backend
+        ports:
+        - containerPort: 8080

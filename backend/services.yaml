@@ -10,3 +10,18 @@ spec:
     targetPort: 80
   selector:
     run: aplay-client
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: aplay-backend-loadbalancer
+spec:
+  type: LoadBalancer
+  ports:
+  - port: 443
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    run: aplay-backend
