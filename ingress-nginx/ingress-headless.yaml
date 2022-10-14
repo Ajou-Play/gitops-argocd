@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-nginx
+  namespace: ingress-nginx
+spec:
+  type: ExternalName
+  externalName: web-nginx.backend.svc.cluster.local
+  ports:
+  - port: 443
+    targetPort: 443
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: argocd
+  namespace: ingress-nginx
+spec:
+  type: ExternalName
+  externalName: argocd-server.devops.svc.cluster.local
+  ports:
+  - port: 443
+    targetPort: 443
