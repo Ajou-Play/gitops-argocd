@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mynginx
+  name: aplay-client
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
-      run: mynginx
+      run: aplay-client
   template:
     metadata:
       labels:
-        run: mynginx
+        run: aplay-client
     spec:
       containers:
-      - image: nginx
-        name: mynginx
+      - image: docker.io/minshigee/aplay-client
+        name: aplay-client
         ports:
         - containerPort: 80
