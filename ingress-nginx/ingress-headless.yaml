@@ -5,7 +5,7 @@ metadata:
   namespace: ingress-nginx
 spec:
   type: ExternalName
-  externalName: web-nginx.backend.svc.cluster.local
+  externalName: aplay-client.backend.svc.cluster.local
   ports:
   - port: 443
     targetPort: 443
