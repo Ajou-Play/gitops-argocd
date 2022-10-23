@@ -13,7 +13,7 @@ spec:
         run: aplay-client
     spec:
       containers:
-      - image: docker.io/minshigee/aplay-client
+      - image: docker.io/minshigee/aplay-client:pr-40
         name: aplay-client
         ports:
         - containerPort: 80
