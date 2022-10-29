@@ -9640,13 +9640,13 @@ spec:
   type: LoadBalancer
   ports:
   - name: http
-    port: 80
-    protocol: TCP
-    targetPort: 8080
-  - name: https
     port: 443
     protocol: TCP
     targetPort: 8080
+  - name: https
+    port: 8080
+    protocol: TCP
+    targetPort: 443
   selector:
     app.kubernetes.io/name: argocd-server
 ---
@@ -10184,6 +10184,7 @@ spec:
       containers:
       - command:
         - argocd-server
+        - --insecure
         env:
         - name: ARGOCD_SERVER_INSECURE
           valueFrom:
