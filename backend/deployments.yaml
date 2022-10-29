@@ -3,8 +3,6 @@ kind: Deployment
 metadata:
   name: aplay-client
 spec:
-  nodeSelector:
-    kubernetes.io/arch: amd64
   replicas: 2
   selector:
     matchLabels:
@@ -14,6 +12,8 @@ spec:
       labels:
         run: aplay-client
     spec:
+      nodeSelector:
+        kubernetes.io/arch: amd64
       containers:
       - image: docker.io/minshigee/aplay-client:pr-40
         name: aplay-client
