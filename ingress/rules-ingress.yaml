@@ -2,34 +2,22 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   annotations:
-    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    nginx.ingress.kubernetes.io/ssl-redirect: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /
-    #kubernetes.io/tls-acme: "true"
-    ## deprecated cert-manager.io/cluster-issuer: letsencrypt-staging
-    #cert-manager.io/issuer: letsencrypt-production
+    kubernetes.io/tls-acme: "true"
+    #deprecated cert-manager.io/cluster-issuer: letsencrypt-staging
+    cert-manager.io/issuer: letsencrypt-production
   name: rules-ingress
   namespace: default
 spec:
   ingressClassName: nginx
   tls:
   - hosts:
-      #- '*.aplay.kro.kr'
       - www.aplay.n-e.kr
-      #- argocd.aplay.kro.kr
-    secretName: tmp-tls-ingress
+    secretName: tls-ingress
+
   rules:
-    - host: "*.aplay.kro.kr"
-      http:
-        paths:
-          - path: /
-            pathType: Prefix
-            backend:
-              service:
-                name: my-nginx
-                port:
-                  number: 80
-  rules:
-    - host: "www.aplay.kro.kr"
+    - host: "www.aplay.n-e.kr"
       http:
         paths:
           - path: /
@@ -40,7 +28,7 @@ spec:
                 port:
                   number: 443
 
-    - host: "argocd.aplay.kro.kr"
+    - host: "argocd.aplay.n-e.kr"
       http:
         paths:
           - path: /
