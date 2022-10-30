@@ -14,7 +14,7 @@ spec:
   tls:
   - hosts:
       #- '*.aplay.kro.kr'
-      - www.aplay.kro.kr
+      - www.aplay.n-e.kr
       #- argocd.aplay.kro.kr
     secretName: tmp-tls-ingress
   rules:
