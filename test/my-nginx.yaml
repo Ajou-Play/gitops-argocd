@@ -7,7 +7,7 @@ metadata:
 spec:
   type: LoadBalancer     # 서비스 타입
   ports:
-    - port: 443       # 서비스 포트
+    - port: 80       # 서비스 포트
       targetPort: 80   # 타켓, 즉 pod의 포트
       protocol: TCP
       name: http

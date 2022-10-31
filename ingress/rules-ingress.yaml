@@ -3,10 +3,8 @@ kind: Ingress
 metadata:
   annotations:
     nginx.ingress.kubernetes.io/ssl-redirect: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /
-    kubernetes.io/tls-acme: "true"
-    #deprecated cert-manager.io/cluster-issuer: letsencrypt-staging
-    cert-manager.io/issuer: letsencrypt-production
+    cert-manager.io/issuer: "letsencrypt-prod"
+
   name: rules-ingress
   namespace: default
 spec:
@@ -26,7 +24,7 @@ spec:
               service:
                 name: my-nginx
                 port:
-                  number: 443
+                  number: 80
 
     - host: "argocd.aplay.n-e.kr"
       http:
