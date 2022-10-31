@@ -22,9 +22,9 @@ spec:
             pathType: Prefix
             backend:
               service:
-                name: my-nginx
+                name: headless-to-aplay-client
                 port:
-                  number: 80
+                  number: 443
 
     - host: "argocd.aplay.n-e.kr"
       http:

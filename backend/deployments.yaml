@@ -38,7 +38,7 @@ spec:
         run: aplay-backend
     spec:
       containers:
-      - image: docker.io/minshigee/aplay-backend:202210300225
+      - image: docker.io/minshigee/aplay-backend:petclinic
         name: aplay-backend
         ports:
         - containerPort: 8080
