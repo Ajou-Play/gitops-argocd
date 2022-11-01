@@ -10,7 +10,7 @@ spec:
       port: 3306
       targetPort: 3306
   selector:
-    app: mysql
+    run: mysql
 
 ---
 
@@ -23,11 +23,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mysql
-  template:
-    metadata:
-      labels:
-        app: mysql
+      run: mysql
     spec:
       nodeSelector:
         kubernetes.io/arch: amd64
