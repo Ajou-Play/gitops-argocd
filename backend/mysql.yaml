@@ -21,8 +21,7 @@ metadata:
 spec:
   replicas: 1
   selector:
-    matchLabels:
-      app: mysql
+    app.kubernetes.io/app: mysql
   template:
     metadata:
       labels:
