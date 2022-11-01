@@ -5,7 +5,7 @@ metadata:
   namespace: aplay
 spec:
   selector:
-    app.kubernetes.io/app: mysql
+    app: mysql
   ports:
     - protocol: TCP
       port: 3306
@@ -14,13 +14,15 @@ spec:
 ---
 
 apiVersion: apps/v1
-kind: Pod
+kind: Deployment
 metadata:
   name: mysql
   namespace: aplay
 spec:
+  replicas: 1
   selector:
-    app: mysql
+    matchLabels:
+      app: mysql
   template:
     metadata:
       labels:
