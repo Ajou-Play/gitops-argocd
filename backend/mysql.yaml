@@ -22,11 +22,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mysql
+      run: mysql
   template:
     metadata:
       labels:
-        app: mysql
+        run: mysql
     spec:
       nodeSelector:
         kubernetes.io/arch: amd64
