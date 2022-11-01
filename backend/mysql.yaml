@@ -4,12 +4,12 @@ metadata:
   name: mysql
   namespace: aplay
 spec:
-  selector:
-    app.kubernetes.io/app: mysql
   ports:
     - protocol: TCP
       port: 3306
       targetPort: 3306
+  selector:
+    run: mysql
 
 ---
 
