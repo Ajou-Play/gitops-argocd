@@ -4,6 +4,7 @@ metadata:
   name: mysql
   namespace: aplay
 spec:
+  type: LoadBalancer
   ports:
     - protocol: TCP
       port: 3306
