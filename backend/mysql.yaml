@@ -14,14 +14,13 @@ spec:
 ---
 
 apiVersion: apps/v1
-kind: Deployment
+kind: Pod
 metadata:
   name: mysql
   namespace: aplay
 spec:
-  replicas: 1
   selector:
-    app.kubernetes.io/app: mysql
+    app: mysql
   template:
     metadata:
       labels:
