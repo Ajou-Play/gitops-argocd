@@ -23,6 +23,8 @@ spec:
   - port: 80
     protocol: TCP
     targetPort: 80
+  externalIPs:
+    - 152.67.200.167
   selector:
     run: aplay-client
 
@@ -39,5 +41,7 @@ spec:
   - port: 80
     protocol: TCP
     targetPort: 8080
+  externalIPs:
+    - 152.67.200.167
   selector:
     run: aplay-backend
