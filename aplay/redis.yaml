@@ -33,7 +33,7 @@ spec:
     spec:
       containers:
         - name: redis
-          image: "bitnami/redis:latest"
+          image: "redis:latest"
           ports:
             - containerPort: 6379
           env:
