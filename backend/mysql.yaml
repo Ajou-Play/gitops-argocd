@@ -34,7 +34,6 @@ spec:
         - name: mysql
           image: mysql:8.0.26
           env:
-            -
             - name: MYSQL_ROOT_PASSWORD
               valueFrom:
                 secretKeyRef:
