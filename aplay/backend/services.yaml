@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: aplay-backend-loadbalancer
+  namespace: aplay
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 80
+      protocol: TCP
+      targetPort: 8080
+  externalIPs:
+    - 152.67.200.167
+  selector:
+    run: aplay-backend

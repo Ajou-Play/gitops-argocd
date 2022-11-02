@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aplay-backend
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: aplay-backend
+  template:
+    metadata:
+      labels:
+        run: aplay-backend
+    spec:
+      nodeSelector:
+        kubernetes.io/arch: amd64
+      containers:
+        - image: docker.io/minshigee/aplay-backend:202211020459
+          name: aplay-backend
+          ports:
+            - containerPort: 8080
