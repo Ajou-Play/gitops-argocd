@@ -16,7 +16,7 @@ spec:
       nodeSelector:
         kubernetes.io/arch: amd64
       containers:
-      - image: docker.io/minshigee/aplay-client:init2
+      - image: docker.io/minshigee/aplay-client:websocket
         name: aplay-client
         ports:
         - containerPort: 80
