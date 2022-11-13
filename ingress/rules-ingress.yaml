@@ -30,6 +30,13 @@ spec:
     - host: "www.aplay.n-e.kr"
       http:
         paths:
+          - path: /meeting
+            pathType: Prefix
+            backend:
+              service:
+                name: headless-to-kms-service
+                port:
+                  number: 443
           - path: /
             pathType: Prefix
             backend:
