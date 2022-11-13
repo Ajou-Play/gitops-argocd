@@ -1,0 +1,40 @@
+apiVersion: apps/v1 #beta2 # for versions before 1.9.0 use apps/v1beta2
+kind: Deployment
+metadata:
+  name: kms-deployment
+spec:
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: kms
+  replicas: 1 # tells deployment to run 1 pods matching the template
+  template: # create pods using pod definition in this template
+    metadata:
+      labels:
+        app: kms
+    spec:
+      containers:
+        - name: kms
+          image: kurento/kurento-media-server:6.7.1-xenial
+          env:
+            - name: "KMS_TURN_URL"
+              value: "stun4.l.google.com:19302"
+          ports:
+            - containerPort: 8888
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kms-service
+  labels:
+    app: kms
+spec:
+  ports:
+    - port: 8888
+      targetPort: 8888
+      protocol: TCP
+      name: kms-port
+  selector:
+    app: kms
+  type: ClusterIP
