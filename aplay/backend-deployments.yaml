@@ -15,7 +15,7 @@ spec:
       nodeSelector:
         kubernetes.io/arch: amd64
       containers:
-        - image: docker.io/minshigee/aplay-backend:202211211743
+        - image: docker.io/minshigee/aplay-backend:202211211807
           name: aplay-backend
           ports:
             - containerPort: 8080
