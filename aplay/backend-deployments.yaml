@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: aplay-backend
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       run: aplay-backend
