@@ -21,7 +21,7 @@ spec:
             - name: "KMS_STUN_IP"
               value: "stun4.l.google.com"
             - name: "KMS_STUN_PORT"
-              value: 19302
+              value: "19302"
           ports:
             - containerPort: 8888
 ---
