@@ -18,9 +18,9 @@ spec:
         - name: kms
           image: kurento/kurento-media-server:6.7.1-xenial
           env:
-            - name: "KMS_STUN_IP"
+            - name: KMS_STUN_IP
               value: "stun4.l.google.com"
-            - name: "KMS_STUN_PORT"
+            - name: KMS_STUN_PORT
               value: "19302"
           ports:
             - containerPort: 8888
