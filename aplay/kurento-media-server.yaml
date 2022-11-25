@@ -19,7 +19,7 @@ spec:
           image: kurento/kurento-media-server:6.7.1-xenial
           env:
             - name: "KMS_TURN_URL"
-              value: "stun4.l.google.com:19302"
+              value: "aplay:root1234!@35.157.143.31:3478"
           ports:
             - containerPort: 8888
 ---
