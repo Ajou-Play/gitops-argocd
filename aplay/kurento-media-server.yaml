@@ -3,6 +3,7 @@ kind: Deployment
 metadata:
   name: kms-deployment
 spec:
+  type: NodePort
   strategy:
     type: Recreate
   selector:
