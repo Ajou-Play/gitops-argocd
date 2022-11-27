@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: kms-deployment
 spec:
-  type: NodePort
   strategy:
     type: Recreate
   selector:
@@ -31,6 +30,7 @@ metadata:
   labels:
     app: kms
 spec:
+  type: NodePort
   ports:
     - port: 8888
       targetPort: 8888
