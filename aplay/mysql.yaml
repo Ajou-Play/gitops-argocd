@@ -4,6 +4,7 @@ metadata:
   name: mysql
   namespace: aplay
 spec:
+  type: NodePort
   selector:
     app: mysql
   ports:
