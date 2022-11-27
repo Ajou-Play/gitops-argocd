@@ -35,7 +35,6 @@ spec:
     - port: 8888
       targetPort: 8888
       protocol: TCP
-      name: kms-port
   selector:
     app: kms
     
