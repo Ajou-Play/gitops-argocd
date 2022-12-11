@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aplay-express
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: aplay-express
+  template:
+    metadata:
+      labels:
+        run: aplay-express
+    spec:
+      nodeSelector:
+        kubernetes.io/arch: amd64
+      containers:
+        - image: docker.io/minshigee/aplay-backend:express2
+          name: aplay-express
+          ports:
+            - containerPort: 4000
